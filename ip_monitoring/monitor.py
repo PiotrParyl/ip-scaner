@@ -1,21 +1,99 @@
 from utils import *
+import time
+import datetime
+from server_menager import Server_Menager
+
+
+SERWER_IP = []
+
+global email_sended
+email_sended = False
+
+
+     
+
+def monitoring_server():
+    program_status= True
+
+    print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  ")
+    print(f"Servers being monitored. \n If one stops working you will receive an email to: siemanko@gmail.com ")
+    for i in SERWER_IP:
+            print ("|",i.server_ip,"|",i.server_status,"|",i.short_description)
+    print("Listening ...")
+    print('------'*10)
+
+    while program_status:
+
+        for i in SERWER_IP:
+            if i.server_status == True:
+                pass
+            else:
+                i.send_email()
+                break
+                
+
+
+
+def monitoring_server_tool():
+
+    
+
+    program_status = True
+    while program_status:
+        print("======"*10)
+        print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  ")
+        print("Monitorowane servery:")
+
+        print('------'*10)
+        for i in SERWER_IP:
+            
+            print ("|",i.server_ip,"|",i.server_status,"|",i.short_description)
+
+        print('------'*10)
+        print("Dodaj server (1) ")
+        print("Usuń server (2) ")
+        print("Włącz monitorowanie serwerów (3)")
+        print("Powrót (4) ")
+        print("======"*10)
+
+        anser = input("==>")
+
+        if anser == '1':
+            ip_server = input('Podaj IP servera: ')
+            des_server = input('Podaj krótki opis: ')
+            server = Server_Menager(ip_server,des_server)
+            SERWER_IP.append(server)
+
+
+
+        if anser == '2':
+            pass
+
+        if anser == '3':
+            monitoring_server()
+
+        if anser == '3':
+            run_program()
 
 
 
 
 def run_program():
+ 
     target = Ip_Info_Heandle()
     program_status = True
 
-    ip = target.print_ip()
+    
     #network_adress = utils.your_network_address()
     while program_status:
         print("======="*10)
-        print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  \n Your ip address is: {ip}  Your network addres: będzie potem ")
+        print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  \n Your ip address is: {target.print_ip()} \n Your network addres: będzie potem ")
         print(f"What do You want to do buddy ?: ")
-        print(f"Scan all IP from {ip} subnet and export .csv file (1)")
-        print("Show me the time(2)")
-        print("What was the 20th president of the USA(3)")
+        print(f"Scan all IP from {target.print_ip()} subnet and export .csv file (1)")
+        print('Go to monitoring server tool(Super Cool) (2)')
+        print("Show me the time(3)")
+        print("What was the 20th president of the USA(4)")
+        print("Back to run_program (5)")
         print("======="*10)
 
         anser = str(input("==>"))
@@ -23,9 +101,13 @@ def run_program():
             ip_list = your_network_addres()
             print(ip_list)
         if anser == "2":
-            pass
+            monitoring_server_tool()
         if anser == '3':
-            pass    
+            curent_time = datetime.datetime.now()
+            print(f"Curent time is: {curent_time}")
+        if anser == '4':
+            print("Prezydentem Stanów Zjednoczonych był James A. Garfield. \n  Pełnił on swoją funkcję od 4 marca 1881 roku  \n do swojej śmierci 19 września 1881 roku, zaledwie \n po 200 dniach urzędowania.")
+
         
 
 
