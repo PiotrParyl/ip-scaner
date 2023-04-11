@@ -12,24 +12,42 @@ email_sended = False
 
      
 
-def monitoring_server():
+def monitoring_server(servers):
     program_status= True
+
+    servers_list = []
+
+    for i in servers:
+        ip_ = i.server_ip
+        servers_list.append(ip_)
+
+    print(servers_list)
 
     print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  ")
     print(f"Servers being monitored. \n If one stops working you will receive an email to: siemanko@gmail.com ")
-    for i in SERWER_IP:
-            print ("|",i.server_ip,"|",i.server_status,"|",i.short_description)
-    print("Listening ...")
+    print("If you want stop and back press 'CTR+C'")
     print('------'*10)
 
-    while program_status:
-
-        for i in SERWER_IP:
-            if i.server_status == True:
+    try:
+            while True:
                 pass
-            else:
-                i.send_email()
-                break
+
+
+                
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    except KeyboardInterrupt:
+            monitoring_server_tool()
                 
 
 
@@ -43,7 +61,9 @@ def monitoring_server_tool():
         print("======"*10)
         print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  ")
         print("Monitorowane servery:")
+        print('------'*10)
 
+        print("| IP servera | Server Online | Description |")
         print('------'*10)
         for i in SERWER_IP:
             
@@ -70,7 +90,7 @@ def monitoring_server_tool():
             pass
 
         if anser == '3':
-            monitoring_server()
+            monitoring_server(SERWER_IP)
 
         if anser == '3':
             run_program()

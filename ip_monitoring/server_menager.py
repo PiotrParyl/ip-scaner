@@ -1,7 +1,7 @@
 import platform    # For getting the operating system name
 import subprocess  # For executing a shell command
 import os
-from .email_send import *
+from email_send import *
 
 
 class Server_Menager():
