@@ -56,7 +56,6 @@ Run commend:
 * [About Project](#about-project)
 * [Set up](#set-up)
 * [Technologies](#technologies)
-* [Scheme](#scheme)
 * [Docker](#docker)
 
 -----------------------------------------------------------
@@ -74,7 +73,7 @@ An interesting addition will be the ability to write with other users from withi
 # Set up
 
 Before running the program, you need to install the necessary libraries, they can be found in requaierments.txt files. To install the package you should:
-'pip install -r requirements.txt'
+``` pip install -r requirements.txt ```
 
 ## Technologies
 -----------------------------------------------------------
@@ -82,17 +81,10 @@ Technologies Used
 The following technologies have been used in this project:
 
 * Python 3
-* RaspberryPi 3
-* ESP8266 microcontroller
-* Electric water meter with Modbus TCP technology
-* Energy consumption meter with MODBUS RS485
-* Solar panel manufacturer API
 * MySQL database
 * Linux Ubuntu OS
 * AWS
 
-## Scheme
-![image](https://user-images.githubusercontent.com/44020188/187191983-09bdd6a8-7a62-4bd9-ab2f-6382e4290327.png)
 
 
 ## Docker
