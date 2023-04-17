@@ -1,9 +1,9 @@
 #import ip_monitoring
-import utils
+import add_to_ignore.utils as utils
 from server_menager import Server_Menager
 import time
 import datetime
-from utils import Ip_Info_Heandle
+from add_to_ignore.utils import Ip_Info_Heandle
 import os
 
 
