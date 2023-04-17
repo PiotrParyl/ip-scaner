@@ -66,7 +66,7 @@ The task of the project is to monitor the activity of remote servers. If any sto
 
 The general principle of the program at the moment is as follows. At the entrance we give the IP addresses of our servers. After adding servers, we have a small preview of what servers we added and if they are online/offline. After firing "monitoring" the program runs in the background (so we can, for example: go back to the main menu and scan the LAN for ourselves :) addition for fun)
 
-The next step will certainly be to create a user account so that our servers are saved in the DB. Now anyone will be able to download the program, register and monitor the added servers :) 
+The next step will be to create a user account so that our servers are saved in the DB. Now anyone will be able to download the program, register and monitor the added servers :) 
 
 An interesting addition will be the ability to write with other users from within the program hmm . .
 
