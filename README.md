@@ -75,6 +75,9 @@ An interesting addition will be the ability to write with other users from withi
 Before running the program, you need to install the necessary libraries, they can be found in requaierments.txt files. To install the package you should:
 ``` pip install -r requirements.txt ```
 
+After installing the packages, you can run up the program: 
+```python main.py```
+
 ## Technologies
 -----------------------------------------------------------
 Technologies Used
