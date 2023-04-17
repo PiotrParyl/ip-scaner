@@ -1,10 +1,7 @@
-#import ip_monitoring
-import utils
-from server_menager import Server_Menager
+from utils import *
 import time
 import datetime
-from utils import Ip_Info_Heandle
-import os
+from server_menager import Server_Menager
 
 
 SERWER_IP = []
@@ -24,27 +21,20 @@ def monitoring_server(servers):
         ip_ = i.server_ip
         servers_list.append(ip_)
 
+    print(servers_list)
 
-    print(f"Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  ")
+    print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  ")
     print(f"Servers being monitored. \n If one stops working you will receive an email to: siemanko@gmail.com ")
     print("If you want stop and back press 'CTR+C'")
     print('------'*10)
 
     try:
             while True:
-                
-                for i in servers_list:
-                    response = os.system("ping -n 1 " + i)
+                pass
 
-                    if response == 0:
-                        print(f'serwer {i} działa ')
-                    else:
-                        print(f'serwer {i} no nie dizała  ')
-
-                time.sleep(1.0)
 
                 
-
+    
     
     
     
@@ -105,23 +95,21 @@ def monitoring_server_tool():
         if anser == '3':
             run_program()
 
-        else:
-            print('Unknown command')
 
 
 
 def run_program():
  
-    my_ip = Ip_Info_Heandle()
+    target = Ip_Info_Heandle()
     program_status = True
 
     
     #network_adress = utils.your_network_address()
     while program_status:
         print("======="*10)
-        print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  \n Your ip address is: {my_ip.return_ip()} \n Your network addres: będzie potem ")
+        print(f" Welcome to IP-Monitor-Tool by https://github.com/PiotrParyl  \n Your ip address is: {target.print_ip()} \n Your network addres: będzie potem ")
         print(f"What do You want to do buddy ?: ")
-        print(f"Scan all IP from {my_ip.return_ip()} subnet and export .csv file (1)")
+        print(f"Scan all IP from {target.print_ip()} subnet and export .csv file (1)")
         print('Go to monitoring server tool(Super Cool) (2)')
         print("Show me the time(3)")
         print("What was the 20th president of the USA(4)")
@@ -130,7 +118,7 @@ def run_program():
 
         anser = str(input("==>"))
         if anser == "1":
-            ip_list = target
+            ip_list = your_network_addres()
             print(ip_list)
         if anser == "2":
             monitoring_server_tool()
@@ -140,8 +128,7 @@ def run_program():
         if anser == '4':
             print("Prezydentem Stanów Zjednoczonych był James A. Garfield. \n  Pełnił on swoją funkcję od 4 marca 1881 roku  \n do swojej śmierci 19 września 1881 roku, zaledwie \n po 200 dniach urzędowania.")
 
-        else:
-            print('Unknown command')
+        
 
 
 
